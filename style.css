@@ -640,6 +640,12 @@ ul { list-style: none; }
   animation: fadeInUp 1s var(--ease-smooth) 1.4s both;
 }
 
+@media (max-width: 767px) {
+  .hero__scroll-indicator {
+    bottom: 4rem; /* Lifted on mobile to clear the floating trust-bar */
+  }
+}
+
 .hero__scroll-indicator i {
   font-size: 0.8rem;
   animation: bounceDown 1.5s ease-in-out infinite;
@@ -671,6 +677,38 @@ ul { list-style: none; }
   box-shadow: var(--shadow-lg);
   max-width: 900px;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .trust-bar {
+    margin-top: -2.5rem; /* Reduced overlap for mobile */
+  }
+  
+  .trust-bar__inner {
+    grid-template-columns: 1fr; /* Stack items for better readability on narrow screens */
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: left;
+    padding: var(--space-xs);
+  }
+
+  .trust-item__icon {
+    margin: 0;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 1.2rem;
+  }
+
+  .trust-item__title {
+    margin-bottom: 0;
+  }
 }
 
 .trust-item {
@@ -710,7 +748,15 @@ ul { list-style: none; }
 }
 
 /* ---------- Menu Section ---------- */
-.menu { background: var(--clr-bg); }
+.menu { 
+  background: var(--clr-bg); 
+}
+
+@media (max-width: 767px) {
+  .menu {
+    padding-top: var(--space-4xl); /* Increased padding to accommodate floating trust-bar */
+  }
+}
 
 .menu__header {
   text-align: center;
