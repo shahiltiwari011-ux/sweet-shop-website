@@ -617,7 +617,7 @@ ul { list-style: none; }
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding: 8rem 0 4rem;
+  padding: 8rem 0 6rem; /* Increased bottom padding */
 }
 
 .hero__badge {
@@ -705,6 +705,7 @@ ul { list-style: none; }
   justify-content: center;
   align-items: center;
   gap: var(--space-2xl);
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .hero__stat-divider {
@@ -730,6 +731,15 @@ ul { list-style: none; }
   margin-top: 0.15rem;
 }
 
+@media (max-width: 576px) {
+  .hero__stat-divider {
+    display: none;
+  }
+  .hero__stats {
+    gap: var(--space-lg);
+  }
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -738,7 +748,7 @@ ul { list-style: none; }
 /* -- Scroll Indicator -- */
 .hero__scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.25rem; /* Pushed down slightly */
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
@@ -756,7 +766,7 @@ ul { list-style: none; }
 
 @media (max-width: 767px) {
   .hero__scroll-indicator {
-    bottom: 4rem; /* Lifted on mobile to clear the floating trust-bar */
+    bottom: 2rem; /* Adjusted for better clearance */
   }
 }
 
